@@ -1,0 +1,569 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+$color-texto:rgb(226,226,226);
+
+body{
+    font-family: 'Poppins', sans-serif;
+    overflow-x:hidden;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+/*Estilos Universales*/
+.parrafo{  
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.pad{
+    padding: 1rem 5rem;
+}
+
+/*HEADER*/
+nav{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    z-index: 3;
+    .nav-links{
+        display: flex;
+        justify-content: space-between;
+        width: 40%;
+        li{
+            list-style: none;
+            a{
+                color: $color-texto;
+                text-decoration: none;
+                letter-spacing: 3px;
+                font-weight: 600;
+                font-size: 14px;
+            }
+        }
+        a:hover{
+            border-bottom: 2px solid white;
+        }    
+    }
+    .burguer{
+        display: none;
+        cursor: pointer;
+        div{
+            width:25px;
+            height:3px;
+            background-color: $color-texto;
+            margin: 5px;
+            transition: all 0.3s ease; 
+        }
+    }
+}   
+
+.logo{
+    color: $color-texto;
+    letter-spacing: 5px;
+    font-size: 20px;
+}
+
+/*Parallax*/
+#parallax{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-image: url(imagenes/pexels-afta-putta-gunawan-683039.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $color-texto;
+    z-index: 2;
+    #shop{
+        background: rgba(4, 4, 4, 0.116);
+        position: relative;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        font-family: 'Indie Flower', cursive;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(2px);
+        border: $color-texto 1px solid;
+        h1{
+            font-size: 4rem;
+        }
+    }
+    
+}
+/*------------------------------------------------------------*/
+/*ABOUT US*/
+#about{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    justify-content: center;
+    h2{
+        width: max-content;
+        margin: 0 auto;
+        position:relative;
+    }
+    h2::before{
+        content: "";
+        position: absolute;
+        top: 18px;
+        left: -68px;
+        width: 60px;
+        height: 2px;
+        background: black;
+    }
+    h2::after{
+        content: "";
+        position: absolute;
+        top: 18px;
+        right: -68px;
+        width: 60px;
+        height: 2px;
+        background: black;
+    }
+}
+/*-------------------------------------------------------------*/
+
+/*IMAGENES*/
+
+#imagenes{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, minmax(250px, 1fr));
+    width: 100%;
+    .div-img{
+        background-size: cover;
+    }
+    #img-1{
+        grid-column: 1/3;
+        grid-row: 1/3;
+        background-image: url(imagenes/imagen-1.jpg);
+    }
+    #img-2{
+        grid-column: 3/4;
+        grid-row: 1/2;
+        background-image: url(imagenes/imagen-4.jpg);
+    }
+    #img-3{
+        grid-column: 4/5;
+        grid-row: 1/2;
+        background-image: url(imagenes/imagen-3.jpg);
+    }
+    #img-4{
+        grid-column:3/5;
+        grid-row:2/3;
+        background-image: url(imagenes/imagen-2.jpg);
+        background-position-y: center;
+    }
+}
+/*----------------------------------------------------------*/
+
+/*MENU*/
+
+#menu{
+    width: 100%;
+    padding-bottom: 4rem;
+    #cabecera-menu{ 
+        @extend #about;
+        height: 350px;
+    }
+    #menus{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .cuadro-menu{
+        display: flex;
+        gap: 10px;
+        padding:10px;
+        justify-content: center;
+        .div-img{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: block;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+/*--------------------------------------------------*/
+/*CONTACTO*/
+#contacto{
+    align-items: flex-start;
+    flex-direction: column;
+    height: 600px;
+    background-image: url(imagenes/3.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top:4rem;
+    padding-bottom: 2rem;
+    h2{
+        color: white;
+        font-weight: 500;
+        margin-bottom: 2rem;
+    }
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 550px;
+}
+.formulario{
+    background: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid white;
+    padding: 5px;
+    height: 50px;
+    color: white;
+    font-size: 1rem;
+}
+.button{
+    height: 50px;
+    border: 2px solid white;
+    background: white;
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
+}
+.button:hover{
+    background: transparent;
+    color: white;
+}
+textarea{
+    height: 180px!important;
+}
+.formulario::placeholder{
+    color: white;
+}
+
+/*---------------------------------------------------*/
+/*Tipos de cafe*/
+#cafe-tipos{
+    margin-bottom: 2.5rem;
+}
+
+#cabecera-cafe{ 
+    @extend #about;
+    height: 250px;
+    h2{
+        display: flex!important;
+    }
+}
+#tipos-cafe{
+    display: flex;
+    text-align: center;
+    div{
+        padding:2rem;
+    }
+}
+
+
+
+
+/*Footer*/
+footer{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2.5rem!important;
+    background-color: rgba(4, 4, 4, 0.911);
+    color: white;
+    height: 200px;
+}
+
+#enlaces{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
+    a{
+        text-decoration: none;
+        color: white;
+    }
+}
+#enlaces a:hover, i:hover{
+    color: cyan;
+}
+#redes-sociales{
+    margin-top: 1rem;
+    gap: 10px;
+    display: flex;
+    justify-content: space-between;
+    i{
+        font-size: 2rem;
+        cursor: pointer;
+    }
+}
+
+/*responsive*/
+
+
+
+
+
+@media screen and (max-width:1030px) {
+    .pad{
+        padding: 1rem 2.5rem;
+    }
+    #menus{
+        grid-template-columns: 1fr!important;
+    }
+    .cuadro-menu{
+        justify-content: space-evenly!important;
+    }
+    #imagenes{
+        grid-template-columns: 1fr 1fr;
+        #img-1{
+            grid-column: 1/2;
+            grid-row: 1/2;
+            background-position: bottom;
+        }
+        #img-2{
+            grid-column: 2/3;
+            grid-row: 1/2;
+            background-position: bottom;
+        }
+        #img-3{
+            grid-column:1/2;
+            grid-row: 2/3;
+            background-position: center;
+        }
+        #img-4{
+            grid-column: 2/3;
+            grid-row: 2/3;
+            background-position: bottom;
+        }
+    }
+    form{
+        width: 450px!important;
+    }
+    #tipos-cafe{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (max-width:768px) { 
+    nav{
+        background: rgba(4, 4, 4, 0.911);
+        backdrop-filter: blur(4px);
+        position: fixed;
+    }
+
+    .nav-links{
+        position:absolute;
+        right: 0px;
+        top:8vh;
+        height: 92vh;
+        width: 100%!important;
+        background: rgba(4, 4, 4, 0.911);
+        backdrop-filter: blur(4px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around!important;
+        transform: translateX(100%);
+        transition: transform .5s ease-in;
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+    .burguer{
+        display: block!important;
+    }
+    .fadeOutUp{
+        -webkit-animation-name: fad!important;
+        animation-name: fad!important;
+    }
+    .fadeInDown{
+        -webkit-animation-name: fad!important;
+        animation-name: fad!important;
+    }
+
+    #contacto{
+        background-image: url(imagenes/4.jpg);
+        height: 650px;
+        padding-top: 6rem;
+        h2{
+            text-align: center;
+        }
+        form{
+            width: 100%!important;
+        }
+    }
+}
+.nav-active{
+    transform: translateX(0%);
+}
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform:translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform:translateX(0px);
+    }
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2{
+    opacity:0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@media(max-width: 574px){
+    #shop{
+        width: 250px!important;
+        height: 250px!important;
+    }
+    .pad{
+        padding:1rem 1rem ;
+    }
+    .cuadro-menu{
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+    #imagenes{
+        grid-template-rows: repeat(2, minmax(200px, 1fr));
+    }
+    #tipos-cafe{
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (max-width:425px){
+    #imagenes{
+        display: flex;
+        flex-direction: column;
+        .div-img{
+            height: 225px;
+            width: 100%;
+        }
+    }
+    footer{
+        flex-direction: column;
+        height: auto;
+        gap:3rem;
+        text-align: center;
+        #redes-sociales{
+            justify-content: center;
+        }
+    }
+    #cabecera-cafe{
+        h2::before{
+            content: "";
+            position: absolute;
+            top: 18px;
+            left: -38px;
+            width: 30px;
+            height: 2px;
+            background: black;
+        }
+        h2::after{
+            content: "";
+            position: absolute;
+            top: 18px;
+            right: -38px;
+            width: 30px;
+            height: 2px;
+            background: black;
+        }
+    }
+}
+
+
+
+/*Animaciones header*/
+.fadeOutUp {
+    -webkit-animation-name: fadeOutUp;
+    animation-name: fadeOutUp;
+    -webkit-animation-duration: .5s;
+    animation-duration: .5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+@-webkit-keyframes fadeOutUp {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+}
+@keyframes fadeOutUp {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+}
+
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    -webkit-animation-duration: .5s;
+    animation-duration: .5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+@-webkit-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
